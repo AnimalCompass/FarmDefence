@@ -1,14 +1,13 @@
-package com.animalcompass.farmdefence.pigs.weapons;
+package com.animalcompass.farmdefence.core.pigs.weapons;
 
-import com.animalcompass.farmdefence.Enemy;
-import com.animalcompass.farmdefence.Vector;
-import com.animalcompass.farmdefence.Weapon;
+import com.animalcompass.farmdefence.core.Enemy;
+import com.animalcompass.farmdefence.core.Vector;
+import com.animalcompass.farmdefence.core.Weapon;
 
 import java.util.List;
-// import java.util.Vector;
 
 /**
- * Created by john on 2/16/16.
+ * PigletMissile: Small exploding pigs launched by a Mother Pig.
  */
 public class PigletMissile extends Weapon {
     private Vector velocity;
@@ -35,8 +34,15 @@ public class PigletMissile extends Weapon {
         if (closest_enemy != null){
             Vector desired_vel = new Vector(closest_enemy.x - x, closest_enemy.y - y);
             desired_vel.normalize();
-            desired_vel = desired_vel.mult(this.MAX_VELOCITY);
+            desired_vel = desired_vel.mult(MAX_VELOCITY);
+            steering = desired_vel.subtract(this.velocity);
+            steering.normalize();
+            this.velocity = this.velocity.add(steering);
+            this.velocity.normalize();
+            this.velocity = this.velocity.mult(MAX_VELOCITY);
         }
+        this.x += this.velocity.x;
+        this.y += this.velocity.y;
     }
 
     public double distance_to(Enemy enemy){

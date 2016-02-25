@@ -1,30 +1,29 @@
-package com.animalcompass.farmdefence.pigs;
+package com.animalcompass.farmdefence.core.pigs;
+
+import com.animalcompass.farmdefence.core.Plot;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 /**
- * Created by john on 2/16/16.
+ * PigPen: a plot packed with pigs.
  */
-public class PigPen {
+public class PigPen extends Plot{
     List<Pig> pigs;
     int x, y;
 
     public PigPen(int x, int y){
-        this.x = x;
-        this.y = y;
+        super(x, y);
         pigs = new ArrayList<Pig>();
     }
 
     public PigPen(int x, int y, ArrayList<Pig> pigs){
-        this.x = x;
-        this.y = y;
+        super(x, y);
         this.pigs = pigs;
     }
 
     public PigPen(int x, int y, Pig[] pigs){
-        this.x = x;
-        this.y = y;
+        super(x, y);
         this.pigs = new ArrayList<Pig>();
         Collections.addAll(this.pigs, pigs);
     }

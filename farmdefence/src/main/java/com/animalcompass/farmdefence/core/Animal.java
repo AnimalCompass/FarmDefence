@@ -1,9 +1,9 @@
-package com.animalcompass.farmdefence;
+package com.animalcompass.farmdefence.core;
 
 import java.util.List;
 
 /**
- * Created by john on 2/16/16.
+ * Animal: Base class for all animals.
  */
 public class Animal {
     public int type, health, x, y, angle;

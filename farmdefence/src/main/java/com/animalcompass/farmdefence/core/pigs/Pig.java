@@ -1,12 +1,13 @@
-package com.animalcompass.farmdefence.pigs;
+package com.animalcompass.farmdefence.core.pigs;
 
-import com.animalcompass.farmdefence.Animal;
-import com.animalcompass.farmdefence.Enemy;
+import com.animalcompass.farmdefence.core.Animal;
+import com.animalcompass.farmdefence.core.Enemy;
 
 import java.util.List;
 
 /**
- * Created by john on 2/16/16.
+ * Pigs: the basic animal
+ * Use them for just about anything.
  */
 public class Pig extends Animal {
     public static final int PIGLET = 0, FLYING = 1, MOTHER = 2, WARTHOG = 3;

@@ -1,10 +1,10 @@
-package com.animalcompass.farmdefence;
+package com.animalcompass.farmdefence.core;
 
 /**
- * Created by john on 2/16/16.
+ * Vector: A class for storing velocities and stuff.
  */
 public class Vector {
-    double x, y;
+    public double x, y;
 
     public Vector(double x, double y){
         this.x = x;
@@ -23,5 +23,13 @@ public class Vector {
 
     public Vector mult(double m){
         return new Vector(this.x * m, this.y * m);
+    }
+
+    public Vector subtract(Vector other){
+        return new Vector(this.x - other.x, this.y - other.y);
+    }
+
+    public Vector add(Vector other){
+        return new Vector(this.x + other.x, this.y + other.y);
     }
 }
