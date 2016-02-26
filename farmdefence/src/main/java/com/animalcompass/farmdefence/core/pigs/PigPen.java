@@ -17,7 +17,7 @@ public class PigPen extends Plot{
         pigs = new ArrayList<Pig>();
     }
 
-    public PigPen(int x, int y, ArrayList<Pig> pigs){
+    public PigPen(int x, int y, List<Pig> pigs){
         super(x, y);
         this.pigs = pigs;
     }
